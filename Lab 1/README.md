@@ -3,3 +3,9 @@ Para evitar que un atacante obtenga las credenciales si roba una base de datos, 
 Una función matemática determinista significa que, para una misma entrada (input), siempre producirá exactamente la misma salida (output). En la gestión de contraseñas, esto representa un riesgo enorme si no se introduce entropía (aleatoriedad). Si el sistema no añade un valor aleatorio único (conocido como salt) a cada contraseña individual antes de procesarla, cualquier contraseña que se repita en el sistema generará un hash visualmente idéntico.
 
 Ataque de Diccionario. Cuando las contraseñas se guardan usando una función hash rápida y sin salt (como vimos en el ejercicio anterior), un atacante que consiga la base de datos no necesita adivinar la contraseña probando combinaciones de letras al azar. En su lugar, toma un archivo de texto con miles de contraseñas comunes o palabras de un diccionario, calcula el hash de cada una y lo compara con el hash robado. Si coinciden, ha descubierto la contraseña original al instante.
+
+Para solucionar los problemas de SHA-256 que vimos, la industria utiliza funciones derivadoras de claves (KDF) o algoritmos de hashing específicos para contraseñas, como bcrypt, Argon2 o PBKDF2. Estos algoritmos hacen dos cosas de forma automática:
+
+Generan y adjuntan un salt único y aleatorio a cada contraseña.
+
+Implementan un "factor de coste" (Key Stretching). Esto significa que obligan a la computadora a realizar miles de iteraciones matemáticas internas, haciendo que el proceso sea intencionalmente lento. Así, si un atacante quiere hacer un ataque de diccionario, le tomará semanas o meses en lugar de milisegundos.s
