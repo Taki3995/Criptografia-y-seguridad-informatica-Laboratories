@@ -14,9 +14,11 @@
       },
       "extensions": [
         "ms-python.python",
-        "ms-python.vscode-pylance"
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
       ]
     }
   },
+  "postCreateCommand": "pip install --no-cache-dir ipykernel && python -m ipykernel install --user --name=python3 --display-name 'Python 3'",
   "remoteUser": "root"
 }
