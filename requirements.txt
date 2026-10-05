@@ -1,3 +1,5 @@
-# Aqui añadir las librerias nuevas
-cryptography
-bcrypt
+scikit-image
+matplotlib
+numpy
+scipy
+scikit-learn

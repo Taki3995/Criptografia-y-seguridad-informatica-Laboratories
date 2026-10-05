@@ -1,4 +1,3 @@
-# Usamos una versión ligera de Python
 FROM python:3.11-slim
 
 # Definimos la carpeta de trabajo dentro del contenedor
