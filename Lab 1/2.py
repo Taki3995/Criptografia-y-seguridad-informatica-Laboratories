@@ -25,11 +25,13 @@ print(hash_password(pw2)) # Imprime el hash de la segunda contraseña, que es la
 # especialmente tarjetas gráficas (GPUs), un atacante puede generar miles de millones de hashes SHA-256 por segundo para probar combinaciones 
 # rápidamente. Un buen algoritmo para contraseñas debe ser intencionalmente lento y costoso para la CPU/memoria.
 
+
 # 3
-common = diccionario
+with open("Lab 1/diccionario.txt", "r", encoding="utf-8") as file:
+    common = file.read().splitlines() # carga diccionario de contraseñas comunes en una variable para poder iterar
 
-target = hash_password("incontrastablemente")
+target = hash_password("incontrastablemente") # simula el hash robado de una base de datos 
 
-for pw in common:
- if hash_password(pw) == target:
- print("Found:", pw)
+for pw in common: # Inicia bucle de palabras que asigna temporalmente a la variable
+ if hash_password(pw) == target: # calcula el hash de la palabra actual del diccionario y la compara ocn la que estamos buscando
+    print("Found:", pw)
