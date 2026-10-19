@@ -1,3 +1,5 @@
 # Aqui añadir las librerias nuevas
 cryptography
 bcrypt
+ipykernel
+jupyter
